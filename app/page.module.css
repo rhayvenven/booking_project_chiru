@@ -1,0 +1,144 @@
+.main {
+  min-height: 100vh;
+  background-color: #e8dcc8;
+  color: #1a1613;
+}
+
+/* --- Hero Part --- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.heroText {
+  padding: 4rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 34rem;
+}
+
+.mark {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  letter-spacing: 0.8em;
+  color: #9c3b2e;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1.15;
+}
+
+.heroRule {
+  width: 3rem;
+  height: 2px;
+  background-color: #b69457;
+  margin: 1.5rem 0;
+  border: none;
+}
+
+.heroText p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #3a342c;
+  max-width: 30rem;
+}
+
+.heroLink {
+  margin-top: 2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #9c3b2e;
+  text-decoration: none;
+  border-bottom: 1px solid #9c3b2e;
+  padding-bottom: 0.2rem;
+  width: fit-content;
+  transition: opacity 0.2s ease;
+}
+
+.heroLink:hover {
+  opacity: 0.2;
+}
+
+/*--- Hero Panel --- */
+
+.heroPanel {
+  position: relative;
+  min-height: 22rem;
+  background-color: #22343a;
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(182, 148, 87, 0.08) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 75%,
+      rgba(182, 148, 87, 0.06) 0%,
+      transparent 50%
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seal {
+  width: 6.5rem;
+  height: 6.5rem;
+  border: 2px solid #b69457;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-3deg);
+}
+
+.sealChar {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  color: #e8dcc8;
+}
+
+/* ---- Destinations ---*/
+
+.section {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 6rem 1.75rem;
+}
+
+.sectionHeader {
+  max-width: 32rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.9rem;
+  color: #22343a;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-body);
+  margin-top: 0.6rem;
+  color: #5a5245;
+  line-height: 1.6;
+}
+
+.grid {
+  margin-top: 3rem;
+  display: grid;
+  gap: 2.5rem;
+}

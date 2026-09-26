@@ -14,27 +14,13 @@ const body = Zen_Kaku_Gothic_New({
   weight: ["400", "500"],
   variable: "--font-body",
 });
-
-const destinations = [
-  {
-    name: "Tokyo",
-    accent: "#9C3B2E",
-    text: "A city of neon crossings and quiet backstreet shrines, side by side.",
-  },
-  {
-    name: "Kyoto",
-    accent: "#22343A",
-    text: "Wooden machiya, moss gardens, and a thousand years of ceremony,",
-  },
-  {
-    name: "Mount Fuji",
-    accent: "#B69457",
-    text: "The view that has shaped Japanese art and pilgrimage for centuries",
-  },
-];
+const accentColors = ["#9C3B2E", "#22343A", "#B69457"];
 
 export default async function chiruHomePage() {
-  const { data: hotels, error } = await supabase.from("hotels").select("*");
+  const { data: hotels, error } = await supabase
+    .from("hotels")
+    .select("*")
+    .limit(3);
   return (
     <main className={`${styles.main} ${heading.variable} ${body.variable}`}>
       <section className={styles.hero}>
@@ -63,23 +49,39 @@ export default async function chiruHomePage() {
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Where to begin</h2>
           <p className={styles.sectionSubtitle}>
-            Three places that shows a different side of Japan - Pick one, or
-            plan a route through all three.
+            A few of our stays - pick one, or browse all of them.
           </p>
         </div>
-        <div className={styles.grid}>
-          {destinations.map((destination) => (
-            <article
-              key={destination.name}
-              className={styles.card}
-              style={{ "--accent": destination.accent } as React.CSSProperties}
-            >
-              <div className={styles.cardImage} />
-              <h3 className={styles.cardTitle}>{destination.name}</h3>
-              <p className={styles.cardText}>{destination.text}</p>
-            </article>
-          ))}
-        </div>
+        {error && (
+          <p style={{ color: "#9C3B2E", marginTop: "1rem" }}>
+            Couldn&apos;t load hotels: {error.message}
+          </p>
+        )}
+
+        {hotels && hotels.length === 0 && (
+          <p className={styles.sectionSubtitle} style={{ marginTop: "1rem" }}>
+            No hotels added yet - add some in Supabase to see them here.
+          </p>
+        )}
+        {hotels && hotels.length > 0 && (
+          <div className={styles.grid}>
+            {hotels.map((hotel, index) => (
+              <article
+                key={hotel.id}
+                className={styles.card}
+                style={
+                  {
+                    "--accent": accentColors[index % accentColors.length],
+                  } as React.CSSProperties
+                }
+              >
+                <div className={styles.cardImage} />
+                <h3 className={styles.cardTitle}>{hotel.name}</h3>
+                <p className={styles.cardText}>{hotel.city}</p>
+              </article>
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google";
+import { supabase } from "@/lib/supabase";
 import styles from "./page.module.css";
 
 const heading = Shippori_Mincho({
@@ -32,7 +33,8 @@ const destinations = [
   },
 ];
 
-export default function chiruHomePage() {
+export default async function chiruHomePage() {
+  const { data: hotels, error } = await supabase.from("hotels").select("*");
   return (
     <main className={`${styles.main} ${heading.variable} ${body.variable}`}>
       <section className={styles.hero}>
@@ -56,6 +58,7 @@ export default function chiruHomePage() {
           </div>
         </div>
       </section>
+
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Where to begin</h2>

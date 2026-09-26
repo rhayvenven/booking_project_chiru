@@ -150,7 +150,7 @@
 }
 
 .card {
-  border-top: 3px solid var(--accent);
+  border-top: 3px solid var(--accent, #9c3b2e);
   padding-top: 1.5rem;
 }
 

@@ -142,3 +142,34 @@
   display: grid;
   gap: 2.5rem;
 }
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  border-top: 3px solid var(--accent);
+  padding-top: 1.5rem;
+}
+
+.cardImage {
+  height: 10rem;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-top: 1.25rem;
+  color: #22343a;
+}
+
+.cardText {
+  font-family: var(--font-body);
+  margin-top: 0.5rem;
+  color: #5a5245;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}

@@ -32,7 +32,7 @@ const destinations = [
   },
 ];
 
-export default function Home() {
+export default function chiruHomePage() {
   return (
     <main className={`${styles.main} ${heading.variable} ${body.variable}`}>
       <section className={styles.hero}>

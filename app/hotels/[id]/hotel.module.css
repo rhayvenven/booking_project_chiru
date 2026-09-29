@@ -1,0 +1,68 @@
+.backLink {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #9c3b2e;
+  text-decoration: none;
+  border-bottom: 1px solid #9c3b2e;
+  padding-bottom: 0.15rem;
+}
+.hotelName {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  color: #22343a;
+}
+
+.hotelCity {
+  font-family: var(--font-body);
+  margin-top: 0.4rem;
+  color: #9c3b2e;
+}
+.hotelDescription {
+  font-family: var(--font-body);
+  max-width: 36rem;
+  line-height: 1.7;
+  color: #3a342c;
+}
+.roomList {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  max-width: 44rem;
+}
+.room {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid #b69457;
+}
+
+.roomType {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #22343a;
+}
+
+.roomMeta {
+  font-family: var(--font-body);
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #5a5245;
+}
+
+.roomPrice {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: #22343a;
+  white-space: nowrap;
+}
+
+.perNight {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #5a5245;
+}

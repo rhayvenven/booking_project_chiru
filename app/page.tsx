@@ -66,19 +66,25 @@ export default async function chiruHomePage() {
         {hotels && hotels.length > 0 && (
           <div className={styles.grid}>
             {hotels.map((hotel, index) => (
-              <article
+              <Link
                 key={hotel.id}
-                className={styles.card}
-                style={
-                  {
-                    "--accent": accentColors[index % accentColors.length],
-                  } as React.CSSProperties
-                }
+                href={"/hotels/${hotel.id}"}
+                style={{ textDecoration: "none", color: "inherit" }}
               >
-                <div className={styles.cardImage} />
-                <h3 className={styles.cardTitle}>{hotel.name}</h3>
-                <p className={styles.cardText}>{hotel.city}</p>
-              </article>
+                <article
+                  key={hotel.id}
+                  className={styles.card}
+                  style={
+                    {
+                      "--accent": accentColors[index % accentColors.length],
+                    } as React.CSSProperties
+                  }
+                >
+                  <div className={styles.cardImage} />
+                  <h3 className={styles.cardTitle}>{hotel.name}</h3>
+                  <p className={styles.cardText}>{hotel.city}</p>
+                </article>
+              </Link>
             ))}
           </div>
         )}

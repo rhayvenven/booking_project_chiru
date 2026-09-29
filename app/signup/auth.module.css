@@ -1,0 +1,74 @@
+.main {
+  min-height: 100vh;
+  background-color: #e8dcc8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 24rem;
+  background-color: white;
+  padding: 2.5rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #22343a;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  color: #3a342c;
+  margin-top: 1rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  margin: 0.4rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d8c9ae;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #9c3b2e;
+}
+
+.error {
+  color: #9c2b2e;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.button {
+  width: 100%;
+  margin-top: 1.5 rem;
+  padding: 0.75rem;
+  background-color: #22343a;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.switchLink {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #5a5245;
+}
+.switchLink a {
+  color: #9c3b2e;
+}

@@ -22,5 +22,30 @@ export default function LoginPage() {
       email,
       password,
     });
+    setLoading(false);
+
+    if (error) {
+      setError(error.message);
+      return;
+    }
+
+    router.push("/");
   }
+  return (
+    <main className={styles.main}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <h1 className={styles.title}>Log in</h1>
+        <label className={styles.label}>
+          Email
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={styles.input}
+            required
+          />
+        </label>
+      </form>
+    </main>
+  );
 }

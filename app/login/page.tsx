@@ -45,6 +45,23 @@ export default function LoginPage() {
             required
           />
         </label>
+        <label className={styles.label}>
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={styles.input}
+            required
+          ></input>
+        </label>
+        {error && <p className={styles.error}>{error}</p>}
+        <button type="submit" disabled={loading} className={styles.button}>
+          {loading ? "Logging in..." : "Log in"}
+        </button>
+        <p className={styles.switchLink}>
+          Don&apos;t have an account? <Link href="/signup">Sign up</Link>
+        </p>
       </form>
     </main>
   );

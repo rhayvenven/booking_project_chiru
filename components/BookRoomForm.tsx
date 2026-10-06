@@ -49,5 +49,37 @@ export default function BookRoomForm({
       setError(countError.message);
       return;
     }
+
+    if (count !== null && count >= totalQuantity) {
+      setSubmitting(false);
+      setError("No rooms available for the selected dates.");
+      return;
+    }
+
+    const { error: insertError } = await supabase.from("bookings").insert({
+      user_id: user.id,
+      room_id: roomId,
+      check_in: checkIn,
+      check_out: checkOut,
+      guests,
+      status: "confirmed",
+    });
+
+    setSubmitting(false);
+
+    if (insertError) {
+      setError(insertError.message);
+      return;
+    }
+    setSuccess(true);
+  }
+  if (authLoading) return null;
+
+  if (!user) {
+    return (
+      <Link href="/login" className={styles.loginPrompt}>
+        Log in to book
+      </Link>
+    );
   }
 }

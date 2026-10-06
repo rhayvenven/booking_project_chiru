@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem;
+  background-color: #22343a;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: var(--font-heading, serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e8dcc8;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.95rem;
+  color: #e8dcc8;
+  text-decoration: none;
+}
+
+.signupButton {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  background-color: #9c3b2e;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.userName {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  color: #e8dcc8;
+}
+
+.logoutButton {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  background: none;
+  border: 1px solid #b69457;
+  color: #e8dcc8;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}

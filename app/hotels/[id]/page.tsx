@@ -4,6 +4,7 @@ import { Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google";
 import { supabase } from "@/lib/supabase";
 import pageStyles from "../../page.module.css";
 import styles from "./hotel.module.css";
+import BookRoomForm from "@/components/BookRoomForm";
 
 const heading = Shippori_Mincho({
   subsets: ["latin"],
@@ -76,11 +77,16 @@ export default async function HotelDetailPage({
                   <p className={styles.roomMeta}>
                     Sleeps up to {room.capacity}
                   </p>
+                  <p className={styles.roomPrice}>
+                    ¥{room.price_per_night.toLocaleString("ja-JP")}
+                    <span className={styles.perNight}> / night</span>
+                  </p>
                 </div>
-                <p className={styles.roomPrice}>
-                  ¥{room.price_per_night.toLocaleString("ja-JP")}
-                  <span className={styles.perNight}> / night</span>
-                </p>
+                <BookRoomForm
+                  roomId={room.id}
+                  totalQuantity={room.total_quantity}
+                  capacity={room.capacity}
+                />
               </li>
             ))}
           </ul>

@@ -39,6 +39,9 @@ export default function Header() {
 
         {!loading && user && (
           <>
+            <Link href="/my-bookings" className={styles.navLink}>
+              My bookings
+            </Link>
             <span className={styles.userName}>
               {user.user_metadata?.full_name || user.email}
             </span>

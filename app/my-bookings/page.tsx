@@ -81,56 +81,58 @@ export default function MyBookingsPage() {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>My bookings</h1>
+      <div className={styles.container}>
+        <h1 className={styles.title}>My bookings</h1>
 
-      {error && <p className={styles.error}>{error}</p>}
+        {error && <p className={styles.error}>{error}</p>}
 
-      {!error && bookings.length === 0 && (
-        <p className={styles.empty}>
-          You have no bookings yet. <Link href="/hotels">Browse hotels</Link>
-        </p>
-      )}
+        {!error && bookings.length === 0 && (
+          <p className={styles.empty}>
+            You have no bookings yet. <Link href="/hotels">Browse hotels</Link>
+          </p>
+        )}
 
-      {bookings.length > 0 && (
-        <ul className={styles.list}>
-          {bookings.map((booking) => (
-            <li key={booking.id} className={styles.item}>
-              <div>
-                <h2 className={styles.hotelName}>
-                  {booking.rooms.hotels.name}
-                </h2>
-                <p className={styles.meta}>
-                  {booking.rooms.room_type} · {booking.rooms.hotels.city}
-                </p>
-                <p className={styles.meta}>
-                  {booking.check_in} to {booking.check_out} · {booking.guests}{" "}
-                  guest(s)
-                </p>
-              </div>
+        {bookings.length > 0 && (
+          <ul className={styles.list}>
+            {bookings.map((booking) => (
+              <li key={booking.id} className={styles.item}>
+                <div>
+                  <h2 className={styles.hotelName}>
+                    {booking.rooms.hotels.name}
+                  </h2>
+                  <p className={styles.meta}>
+                    {booking.rooms.room_type} · {booking.rooms.hotels.city}
+                  </p>
+                  <p className={styles.meta}>
+                    {booking.check_in} to {booking.check_out} · {booking.guests}{" "}
+                    guest(s)
+                  </p>
+                </div>
 
-              <div className={styles.side}>
-                <span
-                  className={
-                    booking.status === "cancelled"
-                      ? styles.cancelled
-                      : styles.confirmed
-                  }
-                >
-                  {booking.status}
-                </span>
-                {booking.status === "confirmed" && (
-                  <button
-                    onClick={() => handleCancel(booking.id)}
-                    className={styles.cancelButton}
+                <div className={styles.side}>
+                  <span
+                    className={
+                      booking.status === "cancelled"
+                        ? styles.cancelled
+                        : styles.confirmed
+                    }
                   >
-                    Cancel
-                  </button>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
+                    {booking.status}
+                  </span>
+                  {booking.status === "confirmed" && (
+                    <button
+                      onClick={() => handleCancel(booking.id)}
+                      className={styles.cancelButton}
+                    >
+                      Cancel
+                    </button>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </main>
   );
 }

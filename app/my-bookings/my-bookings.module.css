@@ -2,9 +2,12 @@
   min-height: 100vh;
   background-color: #e8dcc8;
   padding: 3rem 1.75rem;
+  box-sizing: border-box;
+}
+
+.container {
   max-width: 48rem;
   margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .title {

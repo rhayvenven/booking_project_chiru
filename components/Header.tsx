@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
@@ -7,7 +6,7 @@ import { supabase } from "@/lib/supabase";
 import styles from "./Header.module.css";
 
 export default function Header() {
-  const { user, loading } = useAuth();
+  const { user, isAdmin, loading } = useAuth();
   const router = useRouter();
 
   async function handleLogout() {
@@ -39,6 +38,11 @@ export default function Header() {
 
         {!loading && user && (
           <>
+            {isAdmin && (
+              <Link href="/admin" className={styles.navLink}>
+                Admin
+              </Link>
+            )}
             <Link href="/my-bookings" className={styles.navLink}>
               My bookings
             </Link>

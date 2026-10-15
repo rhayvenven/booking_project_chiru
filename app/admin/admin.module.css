@@ -1,0 +1,98 @@
+.main {
+  min-height: 100vh;
+  background-color: #e8dcc8;
+  padding: 3rem 1.75rem;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #22343a;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #22343a;
+  margin-top: 2.5rem;
+}
+
+.stats {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat {
+  background-color: white;
+  padding: 1.5rem;
+  border-top: 3px solid #9c3b2e;
+}
+
+.statValue {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #22343a;
+}
+
+.statLabel {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #5a5245;
+}
+
+.tableWrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+  background-color: white;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e8dcc8;
+}
+
+.table th {
+  color: #5a5245;
+  font-weight: 600;
+}
+
+.confirmed {
+  color: #22343a;
+  font-weight: 600;
+}
+
+.cancelled {
+  color: #9c3b2e;
+  font-weight: 600;
+}
+
+.error {
+  color: #9c3b2e;
+  margin-top: 1rem;
+}
+
+.empty {
+  margin-top: 1rem;
+  color: #5a5245;
+}

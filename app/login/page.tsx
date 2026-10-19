@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
@@ -31,6 +31,7 @@ export default function LoginPage() {
 
     router.push("/");
   }
+
   return (
     <main className={styles.main}>
       <form onSubmit={handleSubmit} className={styles.form}>

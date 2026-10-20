@@ -1,11 +1,11 @@
 "use client";
-
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { supabase } from "@/lib/supabase";
-import styles from "./admin-hotels.module.css";
+import styles from "../admin.module.css";
 
 type Hotel = {
   id: string;
@@ -116,7 +116,7 @@ export default function AdminHotelsPage() {
             Name
             <input
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => console.log(e.target.value)}
               className={styles.input}
               required
             />

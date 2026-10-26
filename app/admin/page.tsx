@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
@@ -76,7 +76,11 @@ export default function AdminPage() {
     <main className={styles.main}>
       <div className={styles.container}>
         <h1 className={styles.title}>Admin dashboard</h1>
-
+        <p style={{ marginTop: "0.75rem" }}>
+          <Link href="/admin/hotels" style={{ color: "#9C3B2E" }}>
+            Manage hotels
+          </Link>
+        </p>
         {error && <p className={styles.error}>{error}</p>}
 
         <div className={styles.stats}>
